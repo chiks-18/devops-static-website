@@ -1,0 +1,320 @@
+/* ===========================
+   Global Styles
+=========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f7fa;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ===========================
+   Navigation
+=========================== */
+
+header {
+    background-color: #0d47a1;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    height: 70px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+    color: #ffca28;
+}
+
+/* ===========================
+   Hero Section
+=========================== */
+
+.hero {
+    height: 90vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background: linear-gradient(135deg, #1565c0, #42a5f5);
+
+    color: white;
+}
+
+.hero-content {
+    width: 80%;
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 35px;
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.btn {
+    display: inline-block;
+
+    background-color: white;
+    color: #1565c0;
+
+    padding: 14px 30px;
+
+    border-radius: 5px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #ffca28;
+    color: black;
+}
+
+/* ===========================
+   Common Sections
+=========================== */
+
+section {
+    padding: 70px 10%;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 34px;
+}
+
+/* ===========================
+   Cards
+=========================== */
+
+.service-container,
+.why-container,
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.service-card,
+.why-item,
+.about-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 320px;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+    transition: 0.3s;
+}
+
+.service-card:hover,
+.why-item:hover,
+.about-card:hover {
+    transform: translateY(-8px);
+}
+
+.service-card h3,
+.why-item h3,
+.about-card h2 {
+    margin-bottom: 15px;
+    color: #1565c0;
+}
+
+/* ===========================
+   Tech List
+=========================== */
+
+.tech-list {
+    margin-top: 15px;
+    padding-left: 20px;
+}
+
+.tech-list li {
+    list-style: disc;
+    margin-bottom: 8px;
+}
+
+/* ===========================
+   Page Banner
+=========================== */
+
+.page-banner {
+    background-color: #1565c0;
+    color: white;
+    text-align: center;
+}
+
+.page-banner h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+/* ===========================
+   Contact
+=========================== */
+
+.contact-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+}
+
+.contact-info,
+.contact-form {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 450px;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.contact-info h2,
+.contact-form h2 {
+    margin-bottom: 20px;
+    color: #1565c0;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    border: none;
+    cursor: pointer;
+}
+
+#formMessage {
+    margin-top: 15px;
+    font-weight: bold;
+    color: green;
+}
+
+/* ===========================
+   Footer
+=========================== */
+
+footer {
+    background-color: #0d47a1;
+    color: white;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+/* ===========================
+   Responsive Design
+=========================== */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .nav-links {
+        margin-top: 15px;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .hero {
+        height: auto;
+        padding: 80px 20px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .contact-info,
+    .contact-form,
+    .service-card,
+    .why-item,
+    .about-card {
+        width: 100%;
+    }
+
+}
