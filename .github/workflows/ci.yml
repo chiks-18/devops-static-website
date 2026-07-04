@@ -8,7 +8,7 @@ permissions:
 
 jobs:
   docker-build-and-push:
-    name: Build and Push Docker Image
+    name: Build & Push Docker Image
     runs-on: ubuntu-latest
 
     steps:
@@ -26,12 +26,17 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          docker build -t chiks18/cloudops-solutions:v1 .
+          docker build \
+          -t chiks18/cloudops-solutions:latest \
+          -t chiks18/cloudops-solutions:${{ github.sha }} .
 
-      - name: Push Docker Image
-        run: |
-          docker push chiks18/cloudops-solutions:v1
+      - name: Push Latest Image
+        run: docker push chiks18/cloudops-solutions:latest
 
-      - name: Verify Image
+      - name: Push Version Image
+        run: docker push chiks18/cloudops-solutions:${{ github.sha }}
+
+      - name: Image Information
         run: |
-          docker pull chiks18/cloudops-solutions:v1
+          echo "Latest Image: chiks18/cloudops-solutions:latest"
+          echo "Version Image: chiks18/cloudops-solutions:${{ github.sha }}"

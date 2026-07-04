@@ -28,12 +28,12 @@ jobs:
       - name: Pull Latest Docker Image
         shell: powershell
         run: |
-          docker pull chiks18/cloudops-solutions:v1
+          docker pull chiks18/cloudops-solutions:latest
 
-      - name: Update Kubernetes Deployment
+      - name: Restart Deployment
         shell: powershell
         run: |
-          kubectl set image deployment/cloudops-deployment cloudops-container=chiks18/cloudops-solutions:v1
+          kubectl rollout restart deployment/cloudops-deployment
 
       - name: Wait for Rollout
         shell: powershell
@@ -43,7 +43,7 @@ jobs:
       - name: Verify Pods
         shell: powershell
         run: |
-          kubectl get pods
+          kubectl get pods -o wide
 
       - name: Verify Services
         shell: powershell
