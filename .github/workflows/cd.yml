@@ -2,3 +2,33 @@ name: Continuous Deployment
 
 on:
   workflow_dispatch:
+
+jobs:
+  deploy-to-kubernetes:
+    name: Deploy to Kubernetes
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Verify kubectl
+        run: kubectl version --client
+
+      - name: Verify Minikube
+        run: minikube status
+
+      - name: Pull Latest Docker Image
+        run: docker pull chiks18/cloudops-solutions:v1
+
+      - name: Update Kubernetes Deployment
+        run: kubectl set image deployment/cloudops-deployment cloudops-container=chiks18/cloudops-solutions:v1
+
+      - name: Wait for Rollout
+        run: kubectl rollout status deployment/cloudops-deployment
+
+      - name: Verify Pods
+        run: kubectl get pods
+
+      - name: Verify Services
+        run: kubectl get svc
