@@ -12,16 +12,16 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Verify kubectl
-        run: kubectl version --client
-
       - name: Verify Minikube
         run: minikube status
+
+      - name: Verify Kubernetes Cluster
+        run: kubectl get nodes
 
       - name: Pull Latest Docker Image
         run: docker pull chiks18/cloudops-solutions:v1
 
-      - name: Update Kubernetes Deployment
+      - name: Update Deployment Image
         run: kubectl set image deployment/cloudops-deployment cloudops-container=chiks18/cloudops-solutions:v1
 
       - name: Wait for Rollout
