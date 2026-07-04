@@ -11,7 +11,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
-    background-color: #f4f7fa;
+    background-color: #fdf6f3;
     color: #333;
 }
 
@@ -28,7 +28,7 @@ ul {
 =========================== */
 
 header {
-    background-color: #0d47a1;
+    background-color: #8a5a44;
     color: white;
     position: sticky;
     top: 0;
@@ -64,7 +64,7 @@ header {
 
 .nav-links a:hover,
 .nav-links .active {
-    color: #ffca28;
+    color: #d97a6c;
 }
 
 /* ===========================
@@ -80,7 +80,7 @@ header {
 
     text-align: center;
 
-    background: linear-gradient(135deg, #1565c0, #42a5f5);
+    background: linear-gradient(135deg, #e08a7b, #8a5a44);
 
     color: white;
 }
@@ -108,7 +108,7 @@ header {
     display: inline-block;
 
     background-color: white;
-    color: #1565c0;
+    color: #8a5a44;
 
     padding: 14px 30px;
 
@@ -120,7 +120,7 @@ header {
 }
 
 .btn:hover {
-    background-color: #ffca28;
+    background-color: #d97a6c;
     color: black;
 }
 
@@ -174,7 +174,7 @@ section h2 {
 .why-item h3,
 .about-card h2 {
     margin-bottom: 15px;
-    color: #1565c0;
+    color: #8a5a44;
 }
 
 /* ===========================
@@ -196,7 +196,7 @@ section h2 {
 =========================== */
 
 .page-banner {
-    background-color: #1565c0;
+    background-color: #a85c47;
     color: white;
     text-align: center;
 }
@@ -230,7 +230,7 @@ section h2 {
 .contact-info h2,
 .contact-form h2 {
     margin-bottom: 20px;
-    color: #1565c0;
+    color: #8a5a44;
 }
 
 .contact-info p {
@@ -269,7 +269,7 @@ section h2 {
 =========================== */
 
 footer {
-    background-color: #0d47a1;
+    background-color: #4a2c1d;
     color: white;
 
     text-align: center;
